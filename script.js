@@ -1,54 +1,45 @@
-let kalkEkspresi = '';
+// Loading
+setTimeout(() => {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("app").classList.remove("hidden");
+}, 2000);
 
-function kalkInput(val) {
-  kalkEkspresi += val;
-  document.getElementById('kalk-input').value = kalkEkspresi;
+// Chatbot
+function sendMessage() {
+  const input = document.getElementById("userInput");
+  const chatbox = document.getElementById("chatbox");
+  const question = input.value.trim();
+
+  if (!question) return;
+
+  chatbox.innerHTML += `<div><b>You:</b> ${question}</div>`;
+
+  let answer;
+  try {
+    answer = eval(question);
+  } catch {
+    answer = "Soal tidak valid. Gunakan format matematika.";
+  }
+
+  chatbox.innerHTML += `<div><b>Ninz Bot:</b> ${answer}</div>`;
+  chatbox.scrollTop = chatbox.scrollHeight;
+  input.value = "";
 }
 
-function kalkHitung() {
+// Calculator
+function addCalc(val) {
+  document.getElementById("calcDisplay").value += val;
+}
+
+function calculate() {
   try {
-    const hasil = eval(kalkEkspresi);
-    document.getElementById('kalk-input').value = hasil;
-    kalkEkspresi = hasil.toString();
+    document.getElementById("calcDisplay").value =
+      eval(document.getElementById("calcDisplay").value);
   } catch {
-    document.getElementById('kalk-input').value = 'Error';
-    kalkEkspresi = '';
+    document.getElementById("calcDisplay").value = "Error";
   }
 }
 
-function kalkClear() {
-  kalkEkspresi = '';
-  document.getElementById('kalk-input').value = '';
-}
-
-const dataSoal = {
-  // Matematika
-  '2+2': '4',
-  '5*5': '25',
-  '10/2': '5',
-  // ...
-};
-
-// Tambahkan soal lainnya...
-for (let i = 1; i <= 100; i++) {
-  dataSoal[`${i}+${i}`] = i + i;
-  dataSoal[`${i}*${i}`] = i * i;
-}
-
-function jawabSoal() {
-  const soal = document.getElementById('soal-input').value;
-  document.getElementById('loading').style.display = 'block';
-  setTimeout(() => {
-    if (dataSoal[soal]) {
-      document.getElementById('jawaban').innerText = dataSoal[soal];
-    } else {
-      try {
-        const hasil = eval(soal);
-        document.getElementById('jawaban').innerText = hasil;
-      } catch {
-        document.getElementById('jawaban').innerText = 'Maaf, Ninz Bot tidak tahu 😊';
-      }
-    }
-    document.getElementById('loading').style.display = 'none';
-  }, 2000);
+function clearCalc() {
+  document.getElementById("calcDisplay").value = "";
 }
