@@ -1,0 +1,100 @@
+body {
+  font-family: monospace;
+  background-color: #000;
+  color: #0f0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #111;
+  border: 1px solid #0f0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.kalk-input {
+  width: 100%;
+  height: 40px;
+  font-size: 24px;
+  padding: 10px;
+  border: 1px solid #0f0;
+  border-radius: 5px;
+  background-color: #222;
+  color: #0f0;
+}
+
+.kalk-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.kalk-buttons button {
+  height: 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #0f0;
+  cursor: pointer;
+}
+
+.kalk-buttons button:hover {
+  background-color: #444;
+}
+
+.soal-input {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid #0f0;
+  border-radius: 5px;
+  background-color: #222;
+  color: #0f0;
+}
+
+.jawaban {
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid #0f0;
+  border-radius: 5px;
+  background-color: #222;
+  color: #0f0;
+}
+
+.loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #0f0;
+  border-top: 5px solid #000;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
