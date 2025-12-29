@@ -7,40 +7,51 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Ninz Bot V2</h1>
-    <div class="loading" id="loading">
-      <div class="spinner"></div>
-      <p>Ninz Bot Sedang Loading...</p>
+
+<div class="loader" id="loader">
+  <span>Initializing Ninz Bot V2...</span>
+</div>
+
+<div class="container hidden" id="app">
+  <h1>NINZ BOT V2</h1>
+  <p class="subtitle">Ninz Bot V2</p>
+
+  <div class="chatbox" id="chatbox"></div>
+
+  <input type="text" id="userInput" placeholder="Masukkan soal matematika...">
+  <button onclick="sendMessage()">Kirim</button>
+
+  <h2>Kalkulator</h2>
+  <div class="calculator">
+    <input type="text" id="calcDisplay" readonly>
+    <div class="keys">
+      <button onclick="addCalc('7')">7</button>
+      <button onclick="addCalc('8')">8</button>
+      <button onclick="addCalc('9')">9</button>
+      <button onclick="addCalc('/')">÷</button>
+
+      <button onclick="addCalc('4')">4</button>
+      <button onclick="addCalc('5')">5</button>
+      <button onclick="addCalc('6')">6</button>
+      <button onclick="addCalc('*')">×</button>
+
+      <button onclick="addCalc('1')">1</button>
+      <button onclick="addCalc('2')">2</button>
+      <button onclick="addCalc('3')">3</button>
+      <button onclick="addCalc('-')">−</button>
+
+      <button onclick="addCalc('0')">0</button>
+      <button onclick="addCalc('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="addCalc('+')">+</button>
+
+      <button class="clear" onclick="clearCalc()">CLEAR</button>
     </div>
-    <div class="kalkulator">
-      <input id="kalk-input" class="kalk-input" type="text" readonly>
-      <div class="kalk-buttons">
-        <button onclick="kalkInput('7')">7</button>
-        <button onclick="kalkInput('8')">8</button>
-        <button onclick="kalkInput('9')">9</button>
-        <button onclick="kalkInput('/')">/</button>
-        <button onclick="kalkInput('4')">4</button>
-        <button onclick="kalkInput('5')">5</button>
-        <button onclick="kalkInput('6')">6</button>
-        <button onclick="kalkInput('×')">×</button>
-        <button onclick="kalkInput('1')">1</button>
-        <button onclick="kalkInput('2')">2</button>
-        <button onclick="kalkInput('3')">3</button>
-        <button onclick="kalkInput('-')">-</button>
-        <button onclick="kalkInput('0')">0</button>
-        <button onclick="kalkInput('.')">.</button>
-        <button onclick="kalkHitung()">=</button>
-        <button onclick="kalkInput('+')">+</button>
-        <button onclick="kalkClear()">C</button>
-      </div>
-    </div>
-    <hr>
-    <input id="soal-input" class="soal-input" type="text" placeholder="Tanya sesuatu...">
-    <button onclick="jawabSoal()">Jawab</button>
-    <div id="jawaban" class="jawaban"></div>
   </div>
 
-  <script src="script.js"></script>
+  <footer>© System By Ninz Studio</footer>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
