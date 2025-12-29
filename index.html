@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ninz Bot V2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Ninz Bot V2</h1>
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Ninz Bot Sedang Loading...</p>
+    </div>
+    <div class="kalkulator">
+      <input id="kalk-input" class="kalk-input" type="text" readonly>
+      <div class="kalk-buttons">
+        <button onclick="kalkInput('7')">7</button>
+        <button onclick="kalkInput('8')">8</button>
+        <button onclick="kalkInput('9')">9</button>
+        <button onclick="kalkInput('/')">/</button>
+        <button onclick="kalkInput('4')">4</button>
+        <button onclick="kalkInput('5')">5</button>
+        <button onclick="kalkInput('6')">6</button>
+        <button onclick="kalkInput('*')">*</button>
+        <button onclick="kalkInput('1')">1</button>
+        <button onclick="kalkInput('2')">2</button>
+        <button onclick="kalkInput('3')">3</button>
+        <button onclick="kalkInput('-')">-</button>
+        <button onclick="kalkInput('0')">0</button>
+        <button onclick="kalkInput('.')">.</button>
+        <button onclick="kalkHitung()">=</button>
+        <button onclick="kalkInput('+')">+</button>
+        <button onclick="kalkClear()">C</button>
+      </div>
+    </div>
+    <hr>
+    <input id="soal-input" class="soal-input" type="text" placeholder="Tanya sesuatu...">
+    <button onclick="jawabSoal()">Jawab</button>
+    <div id="jawaban" class="jawaban"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
